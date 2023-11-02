@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite + TS</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/clipboard.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/editor-classic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/engine.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/ui.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/widget.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/theme-lark.css">
+</head>
+
+<body>
+	<div id="editor"></div>
+
+	<script type="importmap">
+		{
+			"imports": {
+				"ckeditor5/src/clipboard": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/clipboard.js",
+				"ckeditor5/src/core": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/core.js",
+				"ckeditor5/src/engine": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/engine.js",
+				"ckeditor5/src/enter": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/enter.js",
+				"ckeditor5/src/paragraph": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/paragraph.js",
+				"ckeditor5/src/select-all": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/select-all.js",
+				"ckeditor5/src/typing": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/typing.js",
+				"ckeditor5/src/ui": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/ui.js",
+				"ckeditor5/src/undo": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/undo.js",
+				"ckeditor5/src/upload": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/upload.js",
+				"ckeditor5/src/utils": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/utils.js",
+				"ckeditor5/src/watchdog": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/watchdog.js",
+				"ckeditor5/src/widget": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/widget.js",
+				"lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/+esm",
+				"color-parse": "https://cdn.jsdelivr.net/npm/color-parse/+esm",
+				"color-convert": "https://cdn.jsdelivr.net/npm/color-convert/+esm",
+
+				"@ckeditor/ckeditor5-editor-classic": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/editor-classic.js",
+				"@ckeditor/ckeditor5-essentials": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/essentials.js",
+				"@ckeditor/ckeditor5-theme-lark": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/theme-lark.js",
+				"@ckeditor/ckeditor5-clipboard": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/clipboard.js",
+				"@ckeditor/ckeditor5-core": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/core.js",
+				"@ckeditor/ckeditor5-engine": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/engine.js",
+				"@ckeditor/ckeditor5-enter": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/enter.js",
+				"@ckeditor/ckeditor5-paragraph": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/paragraph.js",
+				"@ckeditor/ckeditor5-select-all": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/select-all.js",
+				"@ckeditor/ckeditor5-typing": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/typing.js",
+				"@ckeditor/ckeditor5-ui": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/ui.js",
+				"@ckeditor/ckeditor5-undo": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/undo.js",
+				"@ckeditor/ckeditor5-upload": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/upload.js",
+				"@ckeditor/ckeditor5-utils": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/utils.js",
+				"@ckeditor/ckeditor5-watchdog": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/watchdog.js",
+				"@ckeditor/ckeditor5-widget": "https://cdn.jsdelivr.net/gh/filipsobol/importmap-test@main/assets/widget.js"
+			}
+		}
+	</script>
+
+	<script type="module">
+		import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
+			import { Essentials } from '@ckeditor/ckeditor5-essentials';
+			import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
+
+			await ClassicEditor.create( document.querySelector( '#editor' ), {
+				plugins: [
+					Essentials,
+					Paragraph
+				],
+				toolbar: [
+					'undo', 'redo'
+				]
+			} );
+
+	</script>
+</body>
+</html>
